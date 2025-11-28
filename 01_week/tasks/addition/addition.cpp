@@ -1,7 +1,15 @@
-#include <cstdint>
-#include <stdexcept>
 
+#include <cstdint>       // Подключаем библиотеку для работы с целыми числами фиксированного размера
 
-int64_t Addition(int a, int b) {
-    throw std::runtime_error{"Not implemented"};
+// Объявляем функцию с именем Addition (Сложение),которая принимает два целых числа a и b и возвращает результат типа int64_t (очень большое целое число)
+    int64_t Addition(int a, int b) {
+
+// Создаем переменную result типа int64_t и преобразуем a в этот тип,преобразование предотвращает целочисленное переполнение
+    int64_t result = static_cast<int64_t>(a);
+    
+// При этом b автоматически преобразуется в int64_t для совместимости типов
+    result = result + b;
+    
+// Возвращаем полученный результат 
+    return result;
 }
