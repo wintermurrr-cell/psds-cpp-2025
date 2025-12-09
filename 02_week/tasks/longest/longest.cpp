@@ -2,17 +2,17 @@
 
 char* FindLongestSubsequence(const char* begin, const char* end, size_t& count) {
 
-    // Проверяем на действительные указатели
-    if (begin == nullptr || end == nullptr)
-        return nullptr;
-
-    // Указатель на начало массива не должен быть больше указателя на конец массива
-    if (end < begin)
-        return nullptr;
-
     // Указатель на начало самой большой последовательности
     char* LongestStartChar = nullptr;
     count = 0; // Зануляем счётчик
+
+    // Проверяем на действительные указатели
+    if (begin == nullptr || end == nullptr)
+        return LongestStartChar;
+
+    // Указатель на начало массива не должен быть больше указателя на конец массива
+    if (end < begin)
+        return LongestStartChar;
 
     // Сбрасываем константность с указателя begin 
     //  и работаем дальше с неконстантной копией указателя (копией же?)
